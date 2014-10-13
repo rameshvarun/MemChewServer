@@ -1,0 +1,8 @@
+{
+	"dependencies" : {
+		"redis" : "*",
+		"async" : "*",
+		"express" : "*",
+		"moment-timezone" : "*"
+	}
+}

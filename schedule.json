@@ -1,0 +1,22 @@
+[
+	{
+		"id" : "manzanita",
+		"name" : "Manzanita Dining",
+		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/manzanita-dining",
+		"schedule" : [
+			[],
+			[
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				},
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm"
+				}
+			]
+		]
+	}
+]
