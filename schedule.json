@@ -78,7 +78,7 @@
 					"meal" : "brunch",
 					"start" : "9:30am",
 					"end" : "2:00pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -90,12 +90,12 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "10:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:00am", 
 					"end" : "4:30pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -107,12 +107,12 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "10:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:00am", 
 					"end" : "4:30pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -124,12 +124,12 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "10:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:00am", 
 					"end" : "4:30pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -141,12 +141,12 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "10:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:00am", 
 					"end" : "4:30pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -158,12 +158,12 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "10:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:00am", 
 					"end" : "4:30pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -175,7 +175,7 @@
 					"meal" : "brunch",
 					"start" : "9:30am",
 					"end" : "2:00pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -183,7 +183,7 @@
 				}
 			]
 		]
-	}
+	},
 	{
 		"id" : "lag",
 		"name" : "Lakeside Dining",
@@ -194,7 +194,7 @@
 					"meal" : "brunch",
 					"start" : "10:30am",
 					"end" : "1:00pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -206,12 +206,12 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -223,12 +223,12 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -239,12 +239,12 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -255,12 +255,12 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -271,12 +271,12 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -288,7 +288,7 @@
 					"meal" : "brunch",
 					"start" : "10:30am",
 					"end" : "1:00pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -296,7 +296,7 @@
 				}
 			]
 		]
-	}
+	},
 	{
 		"id" : "flomo",
 		"name" : "Florence Moore Dining",
@@ -307,7 +307,7 @@
 					"meal" : "brunch",
 					"start" : "10:30am",
 					"end" : "1:00pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -319,12 +319,12 @@
 					"meal" : "breakfast",
 					"start" : "8:00am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -336,12 +336,12 @@
 					"meal" : "breakfast",
 					"start" : "8:00am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -353,12 +353,12 @@
 					"meal" : "breakfast",
 					"start" : "8:00am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -370,12 +370,12 @@
 					"meal" : "breakfast",
 					"start" : "8:00am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -385,7 +385,7 @@
 			[],
 			[]
 		]
-	}
+	},
 	{
 		"id" : "branner",
 		"name" : "Branner Dining",
@@ -397,7 +397,7 @@
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -409,7 +409,7 @@
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -421,7 +421,7 @@
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -433,7 +433,7 @@
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -445,7 +445,7 @@
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -454,7 +454,7 @@
 			],
 			[]
 		]
-	}
+	},
 	{
 		"id" : "ricker",
 		"name" : "Ricker Dining",
@@ -465,7 +465,7 @@
 					"meal" : "brunch",
 					"start" : "10:30am",
 					"end" : "1:00pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
@@ -477,16 +477,16 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
-					"end" : "7:00pm",
+					"end" : "7:00pm"
 				}
 			],
 			[
@@ -494,16 +494,16 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
-					"end" : "7:00pm",
+					"end" : "7:00pm"
 				}
 			],
 			[
@@ -511,16 +511,16 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
-					"end" : "7:00pm",
+					"end" : "7:00pm"
 				}
 			],
 			[
@@ -528,22 +528,22 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00pm",
-					"end" : "7:00pm",
+					"end" : "7:00pm"
 				}
 			],
 			[],
 			[]
 		]
-	}
+	},
 	{
 		"id" : "stern",
 		"name" : "Stern Dining",
@@ -554,7 +554,7 @@
 					"meal" : "brunch",
 					"start" : "10:30am",
 					"end" : "1:00pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start": "5:00pm",
@@ -566,16 +566,16 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00",
-					"end" : "7:00"
+					"end" : "7:00pm"
 				}
 			],
 			[
@@ -583,16 +583,16 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00",
-					"end" : "7:00"
+					"end" : "7:00pm"
 				}
 			],
 			[
@@ -600,16 +600,16 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00",
-					"end" : "7:00"
+					"end" : "7:00pm"
 				}
 			],
 			[
@@ -617,16 +617,16 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00",
-					"end" : "7:00"
+					"end" : "7:00pm"
 				}
 			],
 			[
@@ -634,16 +634,16 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00",
-					"end" : "7:00"
+					"end" : "7:00pm"
 				}
 			],
 			[
@@ -651,15 +651,15 @@
 					"meal" : "brunch",
 					"start" : "10:30am",
 					"end" : "1:00pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start": "5:00pm",
 					"end" : "7:00pm"
 				}
-			],
+			]
 		]
-	}
+	},
 	{
 		"id" : "wilbur",
 		"name" : "Wilbur Dining",
@@ -670,7 +670,7 @@
 					"meal" : "brunch",
 					"start" : "10:30am",
 					"end" : "1:00pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start": "5:00pm",
@@ -682,16 +682,16 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00",
-					"end" : "7:00"
+					"end" : "7:00pm"
 				}
 			],
 			[
@@ -699,16 +699,16 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00",
-					"end" : "7:00"
+					"end" : "7:00pm"
 				}
 			],
 			[
@@ -716,16 +716,16 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00",
-					"end" : "7:00"
+					"end" : "7:00pm"
 				}
 			],
 			[
@@ -733,16 +733,16 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00",
-					"end" : "7:00"
+					"end" : "7:00pm"
 				}
 			],
 			[
@@ -750,16 +750,16 @@
 					"meal" : "breakfast",
 					"start" : "7:30am",
 					"end" : "9:30am"
-				}
+				},
 				{
 					"meal" : "lunch",
 					"start" : "11:30am",
 					"end" : "1:15pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start" : "5:00",
-					"end" : "7:00"
+					"end" : "7:00pm"
 				}
 			],
 			[
@@ -767,13 +767,13 @@
 					"meal" : "brunch",
 					"start" : "10:30am",
 					"end" : "1:00pm"
-				}
+				},
 				{
 					"meal" : "dinner",
 					"start": "5:00pm",
 					"end" : "7:00pm"
 				}
-			],
+			]
 		]
 	}
 ]
