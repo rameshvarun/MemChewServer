@@ -71,12 +71,19 @@ app.get('/halls', function(req, res) {
 						} else {
 							callback(null, "none");
 						}
+					},
+					// Count the number of comments on this hall
+					function(callback) {
+						redis.llen(data.mealid + "_comments", function(err, comments) {
+							callback(null, comments ? parseInt(comments) : 0);
+						});
 					}
 					], function(err, results) {
 					// Return data result
 					data.upvotes = results[0];
 					data.downvotes = results[1];
 					data.rating = results[2];
+					data.comments = results[3];
 					callback(null, data);
 				});
 				
