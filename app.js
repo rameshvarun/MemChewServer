@@ -2,8 +2,10 @@ var express = require('express'); // Web framework
 var async = require('async'); // Control flow library
 var moment = require('moment-timezone'); // Time handling
 var schedule = require('./schedule.json') // Dining hall schedule
+var uuid = require('node-uuid'); // Generate unique id's
 
-var TIME_ZONE = "America/Los_Angeles"
+var TIME_ZONE = "America/Los_Angeles" // Current Time Zone
+var IMAGES_FOLDER = "public";
 
 // Connect to redis database
 var redis = require("redis").createClient();
@@ -78,6 +80,9 @@ app.get('/comment', function(req, res){
 
 app.get('/comments', function(req, res){
 	if(req.query.meal) {
+		/*var comment = {
+			id : 
+		}*/
 		redis.lrange(req.query.meal + "_comments", 0, -1, function(err, list) {
 			res.json(list);
 		});
