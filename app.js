@@ -21,6 +21,7 @@ var app = express();
 app.get('/halls', function(req, res) {
 	var now = moment().tz("America/Los_Angeles");
 	var day = now.format("DD-MM-YYYY");
+
 	async.map(schedule, function(hall, callback) {
 		var data = {
 			id : hall.id,
@@ -41,9 +42,32 @@ app.get('/halls', function(req, res) {
 				data.meal = meal.meal;
 				data.mealid = hall.id + ":" + day + ":" + meal.meal;
 
-				// Query upvotes
-				redis.scard(data.mealid + "_upvotes", function(err, size) {
-					data.upvotes = size;
+				async.parallel([
+					function(callback) {
+						redis.get(data.mealid + "_upvotes", function(err, upvotes) {
+							callback( null, upvotes ? parseInt(upvotes) : 0);
+						});
+					},
+					function(callback) {
+						redis.get(data.mealid + "_downvotes", function(err, downvotes) {
+							callback(null, downvotes ? parseInt(downvotes) : 0);
+						});
+					},
+					function(callback) {
+						if(req.query.user) {
+							redis.hget(data.mealid + "_voters", req.query.user, function(err, rating) {
+								callback(null, rating ? rating : "none");
+							});
+						} else {
+							callback(null, "none");
+						}
+					}
+					], function(err, results) {
+					
+					data.upvotes = results[0];
+					data.downvotes = results[1];
+					data.rating = results[2];
+
 					callback(null, data);
 				});
 				
@@ -53,23 +77,45 @@ app.get('/halls', function(req, res) {
 		if(data.open == false) callback(null, data);
 	}, function(err, result) {
 	    result.sort(function(a, b) {
-		if(!a.open && !b.open) return 0;
-		if(a.open && !b.open) return -1;
-		if(b.open && !a.open) return 1;
-		return b.upvotes - a.upvotes;
+			if(!a.open && !b.open) return 0;
+			if(a.open && !b.open) return -1;
+			if(b.open && !a.open) return 1;
+			return (b.upvotes - b.downvotes) - (a.upvotes - a.downvotes);
 	    });
 		res.json(result);
 	});
 });
 
-app.get('/upvote', function(req, res){
-	if(req.query.meal && req.query.user) {
-		redis.sadd(req.query.meal + "_upvotes", req.query.user, function(err, added) {
-			if(added) res.send('Upvoted');
-			else res.send('Already Upvoted');
+// This endpoint allows the user to upvote or downvote an object
+// item should be a mealid or a commentid
+app.get('/rate', function(req, res){
+	// Ensure that all the arguments are provided
+	if(req.query.item && req.query.user && req.query.action) {
+		// Add user to set of users who have already voted on this item
+		redis.hexists(req.query.item + "_voters", req.query.user, function(err, voted) {
+			if(voted == 1) res.send({ error : "Already voted" }); // This user has already voted
+			else {
+				if(req.query.action == "upvote") { // Upvote action
+					redis.multi().incr(req.query.item + "_upvotes")
+					.hset(req.query.item + "_voters", req.query.user, "upvote")
+					.exec(function(err, replies) {
+						res.send({ result : "upvoted" });
+					});
+				} else if(req.query.action == "downvote") { // Downvote action
+					redis.multi().incr(req.query.item + "_downvotes")
+					.hset(req.query.item + "_voters", req.query.user, "downvote")
+					.exec(function(err, replies) {
+						res.send({ result : "downvoted" });
+					});
+				} else {
+					res.send({ error : "Invalid action" }); // Unkown action
+				}
+			}
 		});
+
+
 	} else {
-		res.send('Invalid Arguments');
+		res.send({ error : "Missing argument" });
 	}
 });
 
