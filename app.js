@@ -50,7 +50,7 @@ app.get('/halls', function(req, res) {
 				break;
 			}
 		}
-		if(data.open = false) callback(null, data);
+		if(data.open == false) callback(null, data);
 	}, function(err, result) {
 		res.json(result);
 	});
