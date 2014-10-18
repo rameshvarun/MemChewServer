@@ -18,11 +18,15 @@ redis.on("connect", function () {
 
 var app = express();
 
+// This route is used to get a list of all of the dining halls. It returns if they are open,
+// as well as the score
 app.get('/halls', function(req, res) {
+	// Get the current time in Pacific Standard
 	var now = moment().tz("America/Los_Angeles");
 	var day = now.format("DD-MM-YYYY");
 
 	async.map(schedule, function(hall, callback) {
+		// Shell of a data object, to be populated and sent back
 		var data = {
 			id : hall.id,
 			name : hall.name,
@@ -33,26 +37,32 @@ app.get('/halls', function(req, res) {
 		var todays_schedule = hall.schedule[now.day()];
 		for(var i = 0; i < todays_schedule.length; ++i) {
 			var meal = todays_schedule[i];
+
+			// Check if we are within the timeframe of this meal
 			var start = moment.tz(day + " " + meal.start, "DD-MM-YYYY h:mma", TIME_ZONE);
 			var end = moment.tz(day + " " + meal.end, "DD-MM-YYYY h:mma", TIME_ZONE);
-
 			if(now.isAfter(start) && now.isBefore(end)) {
 				data.open = true;
 				data.closes = end.fromNow();
 				data.meal = meal.meal;
+
+				// Generate a meal id, which is a unique identifier for this meal, on this day, and this hall
 				data.mealid = hall.id + ":" + day + ":" + meal.meal;
 
 				async.parallel([
+					// Count number of upvotes
 					function(callback) {
 						redis.get(data.mealid + "_upvotes", function(err, upvotes) {
 							callback( null, upvotes ? parseInt(upvotes) : 0);
 						});
 					},
+					// Count number of downvotes
 					function(callback) {
 						redis.get(data.mealid + "_downvotes", function(err, downvotes) {
 							callback(null, downvotes ? parseInt(downvotes) : 0);
 						});
 					},
+					// Determine if this user has already rated / what their rating was
 					function(callback) {
 						if(req.query.user) {
 							redis.hget(data.mealid + "_voters", req.query.user, function(err, rating) {
@@ -63,11 +73,10 @@ app.get('/halls', function(req, res) {
 						}
 					}
 					], function(err, results) {
-					
+					// Return data result
 					data.upvotes = results[0];
 					data.downvotes = results[1];
 					data.rating = results[2];
-
 					callback(null, data);
 				});
 				
@@ -76,13 +85,14 @@ app.get('/halls', function(req, res) {
 		}
 		if(data.open == false) callback(null, data);
 	}, function(err, result) {
+		// Sort results first by if they are open, and then by their score
 	    result.sort(function(a, b) {
 			if(!a.open && !b.open) return 0;
 			if(a.open && !b.open) return -1;
 			if(b.open && !a.open) return 1;
 			return (b.upvotes - b.downvotes) - (a.upvotes - a.downvotes);
 	    });
-		res.json(result);
+		res.json(result); // Send result back to client
 	});
 });
 
