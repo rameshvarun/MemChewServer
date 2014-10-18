@@ -52,6 +52,12 @@ app.get('/halls', function(req, res) {
 		}
 		if(data.open == false) callback(null, data);
 	}, function(err, result) {
+	    result.sort(function(a, b) {
+		if(!a.open && !b.open) return 0;
+		if(a.open && !b.open) return -1;
+		if(b.open && !a.open) return 1;
+		return b.upvotes - a.upvotes;
+	    });
 		res.json(result);
 	});
 });
