@@ -1,6 +1,6 @@
 [
 	{
-		"id" : "manzanita",
+		"id" : "manz",
 		"name" : "Manzanita Dining",
 		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/manzanita-dining",
 		"schedule" : [
@@ -16,7 +16,764 @@
 					"start" : "5:00pm",
 					"end" : "7:00pm"
 				}
+			],
+			[
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				},
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				},
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				},
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				},
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+			[]
+		]
+	},
+	{
+		"id" : "AFDC",
+		"name" : "Arrillaga Family Dining Commons",
+		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/arrillaga-family-dining-commons",
+		"schedule" : [
+			[
+				{
+					"meal" : "brunch",
+					"start" : "9:30am",
+					"end" : "2:00pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "9:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "10:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:00am", 
+					"end" : "4:30pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "9:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "10:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:00am", 
+					"end" : "4:30pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "9:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "10:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:00am", 
+					"end" : "4:30pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "9:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "10:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:00am", 
+					"end" : "4:30pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "9:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "10:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:00am", 
+					"end" : "4:30pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "9:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "brunch",
+					"start" : "9:30am",
+					"end" : "2:00pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "9:00pm"
+				}
 			]
+		]
+	}
+	{
+		"id" : "lag",
+		"name" : "Lakeside Dining",
+		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/lakeside-dining",
+		"schedule" : [
+			[
+				{
+					"meal" : "brunch",
+					"start" : "10:30am",
+					"end" : "1:00pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "8:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "8:00pm"
+				}
+			],[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "8:00pm"
+				}
+			],[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "8:00pm"
+				}
+			],[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "8:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "brunch",
+					"start" : "10:30am",
+					"end" : "1:00pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm"
+				}
+			]
+		]
+	}
+	{
+		"id" : "flomo",
+		"name" : "Florence Moore Dining",
+		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/florence-moore-dining",
+		"schedule" : [
+			[
+				{
+					"meal" : "brunch",
+					"start" : "10:30am",
+					"end" : "1:00pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:30pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "8:00am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:30pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "8:00am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:30pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "8:00am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:30pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "8:00am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:30pm"
+				}
+			],
+			[],
+			[]
+		]
+	}
+	{
+		"id" : "branner",
+		"name" : "Branner Dining",
+		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/branner-dining",
+		"schedule" : [
+			[],
+			[
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+			[]
+		]
+	}
+	{
+		"id" : "ricker",
+		"name" : "Ricker Dining",
+		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/ricker-dining",
+		"schedule" : [
+			[
+				{
+					"meal" : "brunch",
+					"start" : "10:30am",
+					"end" : "1:00pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm",
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm",
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm",
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00pm",
+					"end" : "7:00pm",
+				}
+			],
+			[],
+			[]
+		]
+	}
+	{
+		"id" : "stern",
+		"name" : "Stern Dining",
+		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/stern-dining-0",
+		"schedule" : [
+			[
+				{
+					"meal" : "brunch",
+					"start" : "10:30am",
+					"end" : "1:00pm"
+				}
+				{
+					"meal" : "dinner",
+					"start": "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00",
+					"end" : "7:00"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00",
+					"end" : "7:00"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00",
+					"end" : "7:00"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00",
+					"end" : "7:00"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00",
+					"end" : "7:00"
+				}
+			],
+			[
+				{
+					"meal" : "brunch",
+					"start" : "10:30am",
+					"end" : "1:00pm"
+				}
+				{
+					"meal" : "dinner",
+					"start": "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+		]
+	}
+	{
+		"id" : "wilbur",
+		"name" : "Wilbur Dining",
+		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/wilbur-dining",
+		"schedule" : [
+			[
+				{
+					"meal" : "brunch",
+					"start" : "10:30am",
+					"end" : "1:00pm"
+				}
+				{
+					"meal" : "dinner",
+					"start": "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00",
+					"end" : "7:00"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00",
+					"end" : "7:00"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00",
+					"end" : "7:00"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00",
+					"end" : "7:00"
+				}
+			],
+			[
+				{
+					"meal" : "breakfast",
+					"start" : "7:30am",
+					"end" : "9:30am"
+				}
+				{
+					"meal" : "lunch",
+					"start" : "11:30am",
+					"end" : "1:15pm"
+				}
+				{
+					"meal" : "dinner",
+					"start" : "5:00",
+					"end" : "7:00"
+				}
+			],
+			[
+				{
+					"meal" : "brunch",
+					"start" : "10:30am",
+					"end" : "1:00pm"
+				}
+				{
+					"meal" : "dinner",
+					"start": "5:00pm",
+					"end" : "7:00pm"
+				}
+			],
 		]
 	}
 ]
