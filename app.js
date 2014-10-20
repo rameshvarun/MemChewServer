@@ -22,7 +22,7 @@ var app = express();
 // as well as the score
 app.get('/halls', function(req, res) {
 	// Get the current time in Pacific Standard
-	var now = moment().tz("America/Los_Angeles");
+	var now = moment().tz(TIME_ZONE);
 	var day = now.format("DD-MM-YYYY");
 
 	async.map(schedule, function(hall, callback) {
@@ -136,27 +136,70 @@ app.get('/rate', function(req, res){
 	}
 });
 
+// Use this route to post a new comment
 app.get('/comment', function(req, res){
 	if(req.query.meal && req.query.user && req.query.comment) {
-		redis.rpush(req.query.meal + "_comments", req.query.comment, function(err, length) {
-			res.send('Comment added.');
+		var comment = {
+			text : req.query.comment,
+			user : req.query.user,
+			id : uuid.v4(),
+			moment : moment().tz("America/Los_Angeles").format()
+		};
+		redis.rpush(req.query.meal + "_comments", JSON.stringify(comment), function(err, length) {
+			res.send({ result : "Added comment", comment : comment });
 		});
 		// TODO: Count words through sorted set
 	} else {
-		res.send('Invalid Arguments');
+		res.send({ error : "Missing argument" });
 	}
 });
 
 app.get('/comments', function(req, res){
 	if(req.query.meal) {
-		/*var comment = {
-			id : 
-		}*/
-		redis.lrange(req.query.meal + "_comments", 0, -1, function(err, list) {
-			res.json(list);
+		redis.lrange(req.query.meal + "_comments", 0, -1, function(err, comments) {
+			async.map(comments,
+			function(comment, callback) {
+				comment = JSON.parse(comment);
+				comment.moment = moment.tz(comment.moment, TIME_ZONE);
+				comment.time = comment.moment.fromNow();
+				delete comment.user;
+
+				async.parallel([
+					// Count number of upvotes
+					function(callback) {
+						redis.get(comment.id + "_upvotes", function(err, upvotes) {
+							callback( null, upvotes ? parseInt(upvotes) : 0);
+						});
+					},
+					// Count number of downvotes
+					function(callback) {
+						redis.get(comment.id + "_downvotes", function(err, downvotes) {
+							callback(null, downvotes ? parseInt(downvotes) : 0);
+						});
+					},
+					// Determine if this user has already rated / what their rating was
+					function(callback) {
+						if(req.query.user) {
+							redis.hget(comment.id + "_voters", req.query.user, function(err, rating) {
+								callback(null, rating ? rating : "none");
+							});
+						} else {
+							callback(null, "none");
+						}
+					}], function(err, results) {
+					// Return comment result
+					comment.upvotes = results[0];
+					comment.downvotes = results[1];
+					comment.rating = results[2];
+					callback(null, comment);
+				});
+			},
+			function(err, results) {
+				res.json(results);
+			});
 		});
 	} else {
-		res.send('Invalid Arguments');
+		res.send({ error : "Missing argument" });
 	}
 });
 
