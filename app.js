@@ -142,7 +142,7 @@ var MAX_COMMENT_LENGTH = 250;
 app.get('/comment', function(req, res){
 	if(req.query.meal && req.query.user && req.query.comment) {
 		// Ensure that comments are under 500 characters
-		if(req.query.comment < MAX_COMMENT_LENGTH) {
+		if(req.query.comment.length < MAX_COMMENT_LENGTH) {
 			var comment = {
 				text : req.query.comment,
 				user : req.query.user,
