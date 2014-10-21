@@ -136,19 +136,26 @@ app.get('/rate', function(req, res){
 	}
 });
 
+var MAX_COMMENT_LENGTH = 250;
+
 // Use this route to post a new comment
 app.get('/comment', function(req, res){
 	if(req.query.meal && req.query.user && req.query.comment) {
-		var comment = {
-			text : req.query.comment,
-			user : req.query.user,
-			id : uuid.v4(),
-			moment : moment().tz("America/Los_Angeles").format()
-		};
-		redis.rpush(req.query.meal + "_comments", JSON.stringify(comment), function(err, length) {
-			res.send({ result : "Added comment", comment : comment });
-		});
-		// TODO: Count words through sorted set
+		// Ensure that comments are under 500 characters
+		if(req.query.comment < MAX_COMMENT_LENGTH) {
+			var comment = {
+				text : req.query.comment,
+				user : req.query.user,
+				id : uuid.v4(),
+				moment : moment().tz("America/Los_Angeles").format()
+			};
+			redis.rpush(req.query.meal + "_comments", JSON.stringify(comment), function(err, length) {
+				res.send({ result : "Added comment", comment : comment });
+			});
+			// TODO: Count words through sorted set
+		} else {
+			res.send({ error : "Comment is too long." });
+		}
 	} else {
 		res.send({ error : "Missing argument" });
 	}
