@@ -3,6 +3,7 @@ var async = require('async'); // Control flow library
 var moment = require('moment-timezone'); // Time handling
 var schedule = require('./schedule.json') // Dining hall schedule
 var uuid = require('node-uuid'); // Generate unique id's
+var bodyParser = require('body-parser'); // Parsing request bodies
 
 var TIME_ZONE = "America/Los_Angeles" // Current Time Zone
 var IMAGES_FOLDER = "public";
@@ -17,6 +18,7 @@ redis.on("connect", function () {
 });
 
 var app = express();
+app.use(bodyParser.urlencoded({ extended: true })); // Parse request bodies
 
 // Helper function that simply returns the score of an item
 function score(item) { return item.upvotes - item.downvotes; }
@@ -141,24 +143,31 @@ app.get('/rate', function(req, res){
 });
 
 var MAX_COMMENT_LENGTH = 250;
+var MAX_IMAGE_SIZE = 1000000;
 
 // Use this route to post a new comment
-app.get('/comment', function(req, res){
-	if(req.query.meal && req.query.user && req.query.comment) {
-		// Ensure that comments are under 500 characters
-		if(req.query.comment.length < MAX_COMMENT_LENGTH) {
+app.post('/comment', function(req, res){
+	if( req.param('meal') && req.param('user') && (req.param('comment') || req.param('image')) ) {
+		var is_image = req.param('image') != null;
+		var size_valid = is_image ? req.param('image').length < MAX_IMAGE_SIZE : req.param('comment').length < MAX_COMMENT_LENGTH;
+
+		// Ensure that comments are under 500 characters	
+		if(size_valid) {
 			var comment = {
-				text : req.query.comment,
-				user : req.query.user,
+				user : req.param('user'),
 				id : uuid.v4(),
 				moment : moment().tz("America/Los_Angeles").format()
 			};
-			redis.rpush(req.query.meal + "_comments", JSON.stringify(comment), function(err, length) {
+
+			if(is_image) comment.image = req.param('image');
+			else comment.text = req.param('comment');
+
+			redis.rpush(req.param('meal') + "_comments", JSON.stringify(comment), function(err, length) {
 				res.send({ result : "Added comment", comment : comment });
 			});
 			// TODO: Count words through sorted set
 		} else {
-			res.send({ error : "Comment is too long." });
+			res.send({ error : "Text or image is too long." });
 		}
 	} else {
 		res.send({ error : "Missing argument" });
