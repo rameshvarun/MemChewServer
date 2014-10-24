@@ -169,7 +169,6 @@ app.get('/comments', function(req, res){
 				comment = JSON.parse(comment);
 				comment.moment = moment.tz(comment.moment, TIME_ZONE);
 				comment.time = comment.moment.fromNow();
-				delete comment.user;
 
 				async.parallel([
 					// Count number of upvotes
