@@ -18,6 +18,10 @@ redis.on("connect", function () {
 
 var app = express();
 
+// Helper function that simply returns the score of an item
+function score(item) { return item.upvotes - item.downvotes; }
+function scoreOrder(a, b) { return score(b) - score(a); }
+
 // This route is used to get a list of all of the dining halls. It returns if they are open,
 // as well as the score
 app.get('/halls', function(req, res) {
@@ -97,7 +101,7 @@ app.get('/halls', function(req, res) {
 			if(!a.open && !b.open) return 0;
 			if(a.open && !b.open) return -1;
 			if(b.open && !a.open) return 1;
-			return (b.upvotes - b.downvotes) - (a.upvotes - a.downvotes);
+			return scoreOrder(a, b);
 	    });
 		res.json(result); // Send result back to client
 	});
@@ -201,6 +205,7 @@ app.get('/comments', function(req, res){
 				});
 			},
 			function(err, results) {
+				results.sort(scoreOrder);
 				res.json(results);
 			});
 		});
