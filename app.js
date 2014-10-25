@@ -37,7 +37,9 @@ app.get('/halls', function(req, res) {
 			id : hall.id,
 			name : hall.name,
 			url : hall.url,
-			open : false
+			open : false,
+			latitude : hall.latitude,
+			longitude : hall.longitude
 		}
 
 		var todays_schedule = hall.schedule[now.day()];

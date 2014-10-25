@@ -3,8 +3,8 @@
 		"id" : "manz",
 		"name" : "Manzanita Dining",
 		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/manzanita-dining",
-		"latitude" : "37.425597",
-		"longitude" : "-122.161907",
+		"latitude" : 37.425597,
+		"longitude" : -122.161907,
 		"schedule" : [
 			[],
 			[
@@ -74,8 +74,8 @@
 		"id" : "AFDC",
 		"name" : "Arrillaga Family Dining Commons",
 		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/arrillaga-family-dining-commons",
-		"latitude" : "37.425474",
-		"longitude" : "-122.164057",
+		"latitude" : 37.425474,
+		"longitude" : -122.164057,
 		"schedule" : [
 			[
 				{
@@ -192,8 +192,8 @@
 		"id" : "lag",
 		"name" : "Lakeside Dining",
 		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/lakeside-dining",
-		"latitude" : "37.424726",
-		"longitude" : "-122.176371",
+		"latitude" : 37.424726,
+		"longitude" : -122.176371,
 		"schedule" : [
 			[
 				{
@@ -307,8 +307,8 @@
 		"id" : "flomo",
 		"name" : "Florence Moore Dining",
 		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/florence-moore-dining",
-		"latitude" : "37.422010",
-		"longitude" : "-122.171892",
+		"latitude" : 37.422010,
+		"longitude" : -122.171892,
 		"schedule" : [
 			[
 				{
@@ -398,8 +398,8 @@
 		"id" : "branner",
 		"name" : "Branner Dining",
 		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/branner-dining",
-		"latidude" : "37.425471",
-		"longitude" : "-122.162825",
+		"latidude" : 37.425471,
+		"longitude" : -122.162825,
 		"schedule" : [
 			[],
 			[
@@ -469,8 +469,8 @@
 		"id" : "ricker",
 		"name" : "Ricker Dining",
 		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/ricker-dining",
-		"latitude" : "37.425514",
-		"longitude" : "-122.18050",
+		"latitude" : 37.425514,
+		"longitude" : -122.18050,
 		"schedule" : [
 			[
 				{
@@ -560,8 +560,8 @@
 		"id" : "stern",
 		"name" : "Stern Dining",
 		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/stern-dining-0",
-		"latitude" : "37.424522",
-		"longitude" : "-122.165654",
+		"latitude" : 37.424522,
+		"longitude" : -122.165654,
 		"schedule" : [
 			[
 				{
@@ -678,8 +678,8 @@
 		"id" : "wilbur",
 		"name" : "Wilbur Dining",
 		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/wilbur-dining",
-		"latitude" : "37.423988",
-		"longitude" : "-122.163141",
+		"latitude" : 37.423988,
+		"longitude" : -122.163141,
 		"schedule" : [
 			[
 				{
