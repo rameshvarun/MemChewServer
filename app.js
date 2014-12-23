@@ -56,6 +56,8 @@ app.get('/halls', function(req, res) {
 				data.closes = end.fromNow();
 				data.meal = meal.meal;
 
+				if(meal.mealdesc) data.mealdesc = meal.mealdesc;
+
 				// Generate a meal id, which is a unique identifier for this meal, on this day, and this hall
 				data.mealid = hall.id + ":" + day + ":" + meal.meal;
 
