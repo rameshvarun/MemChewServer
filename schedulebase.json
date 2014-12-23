@@ -65,7 +65,11 @@
 					"end" : "7:00pm"
 				}
 			],
-			[]
+			[				{
+					"meal" : "lunch",
+					"start" : "12:30am",
+					"end" : "1:15pm"
+				}]
 		]
 	},
 	{
@@ -174,7 +178,7 @@
 				{
 					"meal" : "brunch",
 					"start" : "9:30am",
-					"end" : "2:00pm"
+					"end" : "5:00pm"
 				},
 				{
 					"meal" : "dinner",

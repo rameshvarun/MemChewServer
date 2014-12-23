@@ -1,11 +1,12 @@
+
+global.TIME_ZONE = "America/Los_Angeles" // Current Time Zone
+global.IMAGES_FOLDER = "public";
+
 var express = require('express'); // Web framework
 var async = require('async'); // Control flow library
 var moment = require('moment-timezone'); // Time handling
-var schedule = require('./schedule.json') // Dining hall schedule
+var scheduleloader = require('./scheduleloader') // Dining hall schedule
 var uuid = require('node-uuid'); // Generate unique id's
-
-var TIME_ZONE = "America/Los_Angeles" // Current Time Zone
-var IMAGES_FOLDER = "public";
 
 // Connect to redis database
 var redis = require("redis").createClient();
@@ -25,7 +26,7 @@ app.get('/halls', function(req, res) {
 	var now = moment().tz(TIME_ZONE);
 	var day = now.format("DD-MM-YYYY");
 
-	async.map(schedule, function(hall, callback) {
+	async.map(scheduleloader.generateSchedule(), function(hall, callback) {
 		// Shell of a data object, to be populated and sent back
 		var data = {
 			id : hall.id,
@@ -161,6 +162,7 @@ app.get('/comment', function(req, res){
 	}
 });
 
+// Use this route to list all of the comments on a given meal
 app.get('/comments', function(req, res){
 	if(req.query.meal) {
 		redis.lrange(req.query.meal + "_comments", 0, -1, function(err, comments) {
@@ -209,6 +211,9 @@ app.get('/comments', function(req, res){
 		res.send({ error : "Missing argument" });
 	}
 });
+
+// Register admin routes
+require("./admin")(app)
 
 var server = app.listen(3000, function() {
 	console.log("Listening on port %d...", server.address().port);
