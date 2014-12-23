@@ -75,7 +75,7 @@
 		]
 	},
 	{
-		"id" : "AFDC",
+		"id" : "arrillaga",
 		"name" : "Arrillaga Family Dining Commons",
 		"url" : "https://web.stanford.edu/dept/rde/cgi-bin/drupal/dining/arrillaga-family-dining-commons",
 		"latitude" : 37.425474,
@@ -215,7 +215,7 @@
 				{
 					"meal" : "breakfast",
 					"start" : "7:30am",
-					"end" : "9:30"
+					"end" : "9:30am"
 				},
 				{
 					"meal" : "lunch",
@@ -232,7 +232,7 @@
 				{
 					"meal" : "breakfast",
 					"start" : "7:30am",
-					"end" : "9:30"
+					"end" : "9:30am"
 				},
 				{
 					"meal" : "lunch",
@@ -248,7 +248,7 @@
 				{
 					"meal" : "breakfast",
 					"start" : "7:30am",
-					"end" : "9:30"
+					"end" : "9:30am"
 				},
 				{
 					"meal" : "lunch",
@@ -264,7 +264,7 @@
 				{
 					"meal" : "breakfast",
 					"start" : "7:30am",
-					"end" : "9:30"
+					"end" : "9:30am"
 				},
 				{
 					"meal" : "lunch",
@@ -280,7 +280,7 @@
 				{
 					"meal" : "breakfast",
 					"start" : "7:30am",
-					"end" : "9:30"
+					"end" : "9:30am"
 				},
 				{
 					"meal" : "lunch",
@@ -592,7 +592,7 @@
 				},
 				{
 					"meal" : "dinner",
-					"start" : "5:00",
+					"start" : "5:00pm",
 					"end" : "7:00pm"
 				}
 			],
@@ -609,7 +609,7 @@
 				},
 				{
 					"meal" : "dinner",
-					"start" : "5:00",
+					"start" : "5:00pm",
 					"end" : "7:00pm"
 				}
 			],
@@ -626,7 +626,7 @@
 				},
 				{
 					"meal" : "dinner",
-					"start" : "5:00",
+					"start" : "5:00pm",
 					"end" : "7:00pm"
 				}
 			],
@@ -643,7 +643,7 @@
 				},
 				{
 					"meal" : "dinner",
-					"start" : "5:00",
+					"start" : "5:00pm",
 					"end" : "7:00pm"
 				}
 			],
@@ -660,7 +660,7 @@
 				},
 				{
 					"meal" : "dinner",
-					"start" : "5:00",
+					"start" : "5:00pm",
 					"end" : "7:00pm"
 				}
 			],
@@ -710,7 +710,7 @@
 				},
 				{
 					"meal" : "dinner",
-					"start" : "5:00",
+					"start" : "5:00pm",
 					"end" : "7:00pm"
 				}
 			],
@@ -727,7 +727,7 @@
 				},
 				{
 					"meal" : "dinner",
-					"start" : "5:00",
+					"start" : "5:00pm",
 					"end" : "7:00pm"
 				}
 			],
@@ -744,7 +744,7 @@
 				},
 				{
 					"meal" : "dinner",
-					"start" : "5:00",
+					"start" : "5:00pm",
 					"end" : "7:00pm"
 				}
 			],
@@ -761,7 +761,7 @@
 				},
 				{
 					"meal" : "dinner",
-					"start" : "5:00",
+					"start" : "5:00pm",
 					"end" : "7:00pm"
 				}
 			],
@@ -778,7 +778,7 @@
 				},
 				{
 					"meal" : "dinner",
-					"start" : "5:00",
+					"start" : "5:00pm",
 					"end" : "7:00pm"
 				}
 			],
