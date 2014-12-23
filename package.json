@@ -6,7 +6,7 @@
     "moment-timezone": "0.2.2",
     "node-uuid": "1.x",
     "nunjucks": "^1.1.0",
-    "body-parser" : "1.x"
+    "body-parser" : "1.x",
     "redis": "0.12.1"
   }
 }
