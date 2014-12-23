@@ -46,6 +46,7 @@ app.get('/halls', function(req, res) {
 		var todays_schedule = hall.schedule[now.day()];
 		for(var i = 0; i < todays_schedule.length; ++i) {
 			var meal = todays_schedule[i];
+			if(meal.closed || hall.closed) continue;
 
 			// Check if we are within the timeframe of this meal
 			var start = moment.tz(day + " " + meal.start, "DD-MM-YYYY h:mma", TIME_ZONE);

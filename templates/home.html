@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {% for file in files %}
+        <a href="/admin/edit?file={{ file | urlencode }}">{{file}}</a>
+    {% endfor %}
+{% endblock %}
