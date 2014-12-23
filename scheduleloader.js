@@ -15,23 +15,20 @@ module.exports.generateSchedule = function() {
 	var week = now.startOf("week").format("MM-DD-YYYY");
 	var overrideFile = OVERRIDE_DIR + "/" + week + ".js";
 
-	if(fs.existsSync(overrideFile)) {
-		var scope = {};
-
-		scope.halls = schedule;
-		_.each(schedule, function (hall) {
-			scope[hall.id] = hall;
-			_.each(DAY_NAMES, function(day, index) {
-				scope[hall.id][day] = {};
-				_.each(hall.schedule[index], function(meal) {
-					scope[hall.id][day][meal.meal] = meal;
-				});
+	var scope = {};
+	scope.halls = schedule;
+	_.each(schedule, function (hall) {
+		scope[hall.id] = hall;
+		_.each(DAY_NAMES, function(day, index) {
+			scope[hall.id][day] = {};
+			_.each(hall.schedule[index], function(meal) {
+				scope[hall.id][day][meal.meal] = meal;
 			});
 		});
+	});
+	scope.close = function(item) { item.closed = true; }
 
-		scope.close = function(item) { item.closed = true; }
-
-
+	if(fs.existsSync(overrideFile)) {
 		with(scope) eval(fs.readFileSync(overrideFile, "utf8"));
 	}
 
