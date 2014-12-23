@@ -7,6 +7,7 @@ var async = require('async'); // Control flow library
 var moment = require('moment-timezone'); // Time handling
 var scheduleloader = require('./scheduleloader') // Dining hall schedule
 var uuid = require('node-uuid'); // Generate unique id's
+var bodyParser = require('body-parser'); // Parsing request bodies
 
 // Connect to redis database
 var redis = require("redis").createClient();
@@ -18,6 +19,11 @@ redis.on("connect", function () {
 });
 
 var app = express();
+app.use(bodyParser.urlencoded({ extended: true })); // Parse request bodies
+
+// Helper function that simply returns the score of an item
+function score(item) { return item.upvotes - item.downvotes; }
+function scoreOrder(a, b) { return score(b) - score(a); }
 
 // This route is used to get a list of all of the dining halls. It returns if they are open,
 // as well as the score
@@ -32,7 +38,9 @@ app.get('/halls', function(req, res) {
 			id : hall.id,
 			name : hall.name,
 			url : hall.url,
-			open : false
+			open : false,
+			latitude : hall.latitude,
+			longitude : hall.longitude
 		}
 
 		var todays_schedule = hall.schedule[now.day()];
@@ -98,7 +106,7 @@ app.get('/halls', function(req, res) {
 			if(!a.open && !b.open) return 0;
 			if(a.open && !b.open) return -1;
 			if(b.open && !a.open) return 1;
-			return (b.upvotes - b.downvotes) - (a.upvotes - a.downvotes);
+			return scoreOrder(a, b);
 	    });
 		res.json(result); // Send result back to client
 	});
@@ -138,24 +146,31 @@ app.get('/rate', function(req, res){
 });
 
 var MAX_COMMENT_LENGTH = 250;
+var MAX_IMAGE_SIZE = 1000000;
 
 // Use this route to post a new comment
-app.get('/comment', function(req, res){
-	if(req.query.meal && req.query.user && req.query.comment) {
-		// Ensure that comments are under 500 characters
-		if(req.query.comment < MAX_COMMENT_LENGTH) {
+app.post('/comment', function(req, res){
+	if( req.param('meal') && req.param('user') && (req.param('comment') || req.param('image')) ) {
+		var is_image = req.param('image') != null;
+		var size_valid = is_image ? req.param('image').length < MAX_IMAGE_SIZE : req.param('comment').length < MAX_COMMENT_LENGTH;
+
+		// Ensure that comments are under 500 characters	
+		if(size_valid) {
 			var comment = {
-				text : req.query.comment,
-				user : req.query.user,
+				user : req.param('user'),
 				id : uuid.v4(),
 				moment : moment().tz("America/Los_Angeles").format()
 			};
-			redis.rpush(req.query.meal + "_comments", JSON.stringify(comment), function(err, length) {
+
+			if(is_image) comment.image = req.param('image');
+			else comment.text = req.param('comment');
+
+			redis.rpush(req.param('meal') + "_comments", JSON.stringify(comment), function(err, length) {
 				res.send({ result : "Added comment", comment : comment });
 			});
 			// TODO: Count words through sorted set
 		} else {
-			res.send({ error : "Comment is too long." });
+			res.send({ error : "Text or image is too long." });
 		}
 	} else {
 		res.send({ error : "Missing argument" });
@@ -171,7 +186,6 @@ app.get('/comments', function(req, res){
 				comment = JSON.parse(comment);
 				comment.moment = moment.tz(comment.moment, TIME_ZONE);
 				comment.time = comment.moment.fromNow();
-				delete comment.user;
 
 				async.parallel([
 					// Count number of upvotes
@@ -204,6 +218,7 @@ app.get('/comments', function(req, res){
 				});
 			},
 			function(err, results) {
+				results.sort(scoreOrder);
 				res.json(results);
 			});
 		});
