@@ -8,7 +8,7 @@ if(!fs.existsSync("./overrides")) { fs.mkdirSync("overrides") };
 
 global.DAY_NAMES = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
 
-module.exports.generateSchedule = function() {
+var generateSchedule = module.exports.generateSchedule = function() {
 	var schedule = JSON.parse( fs.readFileSync("./schedulebase.json") );
 
 	var now = moment().tz(TIME_ZONE);
@@ -33,4 +33,18 @@ module.exports.generateSchedule = function() {
 	}
 
 	return schedule;
+}
+
+var cached = null;
+var cached_time = 0;
+var RELOAD_TIME = 60000;
+
+module.exports.getSchedule = function() {
+	var time = new Date().getTime();
+	if(!cached || time - cached_time > RELOAD_TIME) {
+		cached = generateSchedule();
+		console.log("Generating schedule...");
+		cached_time = time;
+	}
+	return cached;
 }

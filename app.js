@@ -32,7 +32,7 @@ app.get('/halls', function(req, res) {
 	var now = moment().tz(TIME_ZONE);
 	var day = now.format("DD-MM-YYYY");
 
-	async.map(scheduleloader.generateSchedule(), function(hall, callback) {
+	async.map(scheduleloader.getSchedule(), function(hall, callback) {
 		// Shell of a data object, to be populated and sent back
 		var data = {
 			id : hall.id,
