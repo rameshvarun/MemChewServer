@@ -3,13 +3,26 @@ var nunjucks = require('nunjucks');
 var _ = require("underscore");
 var fs = require("fs");
 
-var basic = httpauth.basic({
-  realm: "Admin area.",
-  file: __dirname + "/.htpasswd",
-});
-var auth = httpauth.connect(basic);
+// Default auth - accept anybody
+var none = httpauth.basic({
+        realm: "Admin area."
+    }, function (username, password, callback) { // Custom authentication method.
+        callback(true);
+    }
+);
+var auth = httpauth.connect(none);
+
+// If there is a .htpasswd file, use that for authentication
+if(fs.existsSync(__dirname + "/.htpasswd")) {
+	var basic = httpauth.basic({
+	  realm: "Admin area.",
+	  file: __dirname + "/.htpasswd",
+	});
+	auth = httpauth.connect(basic);
+}
 
 module.exports = function(app) {
+	// Configure templating engine
 	nunjucks.configure('templates', {
 		autoescape: true,
 		express: app,
