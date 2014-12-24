@@ -1,4 +1,5 @@
-var httpauth = require("http-auth");
+var httpauth = require("http-auth"); // Authentication
+var moment = require('moment-timezone'); // Time handling
 var nunjucks = require('nunjucks');
 var _ = require("underscore");
 var fs = require("fs");
@@ -29,7 +30,12 @@ module.exports = function(app) {
 		watch: true
 	});
 
-	// Use this route to list all of the comments on a given meal
+	// TODO: create a route to view and edit an override file /admin/edit?file=...
+	// GET will let you view the file, while POST will replace the file's content
+
+	// TODO: create a route to make override files, given a date.
+
+	// This route is the admin homepage
 	app.get('/admin', auth, function(req, res){
 		var filenames = _.filter(fs.readdirSync(OVERRIDE_DIR), function(filename) {
 			return filename.match(/^\d\d-\d\d-\d\d\d\d.js$/);
