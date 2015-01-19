@@ -3,6 +3,7 @@ var moment = require('moment-timezone'); // Time handling
 var nunjucks = require('nunjucks');
 var _ = require("underscore");
 var fs = require("fs");
+var path = require("path");
 
 // Default auth - accept anybody
 var none = httpauth.basic({
@@ -21,6 +22,12 @@ if(fs.existsSync(__dirname + "/.htpasswd")) {
 	});
 	auth = httpauth.connect(basic);
 }
+
+var OVERRIDE_HEADER = "// Dining Halls: manz, arrillaga, lag, flomo, branner, ricker, stern, wilbur \
+// Close a dining hall for the week with close(flomo) \
+// Close a dining hall for the day with close(manz.monday) \
+// Close a specific meal with close(manz.monday.breakfast) \
+// Set a meal description with manz.tuesday.dinner.mealdesc = 'Italian Braised Beef with Roasted Potatoes'";
 
 module.exports = function(app) {
 	// Configure templating engine
@@ -44,5 +51,35 @@ module.exports = function(app) {
 		res.render("home.html", {
 			files : filenames
 		});
+	});
+
+	app.post('/admin/createoverride', auth, function(req, res) {
+		var filename = req.params('date') + ".js";
+		var filepath = path.join(OVERRIDE_DIR, filename);
+
+		if(!fs.existsSync(filepath)) {
+			fs.writeFileSync(filepath, OVERRIDE_HEADER);
+			console.log("Created override file " + filepath);
+		} else console.log("Override " + filepath + " already exists...");
+
+		res.redirect("/admin/edit?file=" + filename)
+	});
+
+	app.get('/admin/edit', auth, function(req, res) {
+		var filename = req.query.file;
+		var filepath = path.join(OVERRIDE_DIR, filename);
+
+		res.render("edit.html", {
+			filename : filename,
+			content : fs.readFileSync(filepath, "utf8")
+		});
+	});
+
+	app.post('/admin/edit', auth, function(req, res) {
+		var filename = req.query.file;
+		var filepath = path.join(OVERRIDE_DIR, filename);
+
+		fs.writeFileSync(filepath, req.param('content'));
+		res.redirect(req.url);
 	});
 }

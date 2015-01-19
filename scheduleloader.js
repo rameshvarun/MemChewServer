@@ -29,7 +29,11 @@ var generateSchedule = module.exports.generateSchedule = function() {
 	scope.close = function(item) { item.closed = true; }
 
 	if(fs.existsSync(overrideFile)) {
-		with(scope) eval(fs.readFileSync(overrideFile, "utf8"));
+		try {
+			with(scope) eval(fs.readFileSync(overrideFile, "utf8"));
+		}  catch(err) {
+			fs.writeFile(overrideFile + ".error", err.name + ": " + err.message);
+		}
 	}
 
 	return schedule;

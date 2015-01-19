@@ -3,6 +3,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Kalendae/0.4.1/kalendae.css" type="text/css" charset="utf-8">
 <script src="//cdnjs.cloudflare.com/ajax/libs/Kalendae/0.4.1/kalendae.standalone.min.js" type="text/javascript" charset="utf-8"></script>
 
@@ -10,7 +11,7 @@
         <a href="/admin/edit?file={{ file | urlencode }}">{{file}}</a>
     {% endfor %}
 
-    <form method="get" action="/admin/createoverride">
+    <form method="post" action="/admin/createoverride">
 	    <input name="date" type="text" class="auto-kal" data-kal="format: 'MM-DD-YYYY'">
 	    <input type="submit" value="Create Override"/>
     </form>

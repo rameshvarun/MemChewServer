@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<style type="text/css" media="screen">
+    #editor {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    #savecontainer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        padding: 20px;
+        background-color: lightslategrey;
+    }
+</style>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Kalendae/0.4.1/kalendae.css" type="text/css" charset="utf-8">
+<script src="//cdnjs.cloudflare.com/ajax/libs/Kalendae/0.4.1/kalendae.standalone.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<div id="editor">{{content}}</div>
+
+<form method="post" action="/admin/edit?file={{filename}}">
+    <textarea hidden name="content" id="content"></textarea>
+
+    <div id="savecontainer">
+    <input type="submit" value="Save"/>
+    </div>
+</form>
+
+<script>
+// Initialize ACE editor
+var editor = ace.edit("editor");
+editor.setTheme("ace/theme/monokai");
+editor.getSession().setMode("ace/mode/javascript");
+
+editor.getSession().on('change', function(){
+    $("#content").val(editor.getSession().getValue());
+});
+</script>
+{% endblock %}
