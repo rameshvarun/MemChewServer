@@ -7,6 +7,7 @@ global.OVERRIDE_DIR = __dirname + "/overrides";
 if(!fs.existsSync("./overrides")) { fs.mkdirSync("overrides") };
 
 global.DAY_NAMES = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+global.MEAL_NAMES = ["breakfast", "lunch", "dinner", "brunch"];
 
 var generateSchedule = module.exports.generateSchedule = function() {
 	var schedule = JSON.parse( fs.readFileSync("./schedulebase.json") );
