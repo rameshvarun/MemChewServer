@@ -23,10 +23,10 @@ if(fs.existsSync(__dirname + "/.htpasswd")) {
 	auth = httpauth.connect(basic);
 }
 
-var OVERRIDE_HEADER = "// Dining Halls: manz, arrillaga, lag, flomo, branner, ricker, stern, wilbur \
-// Close a dining hall for the week with close(flomo) \
-// Close a dining hall for the day with close(manz.monday) \
-// Close a specific meal with close(manz.monday.breakfast) \
+var OVERRIDE_HEADER = "// Dining Halls: manz, arrillaga, lag, flomo, branner, ricker, stern, wilbur \n\
+// Close a dining hall for the week with close(flomo) \n\
+// Close a dining hall for the day with close(manz.monday) \n\
+// Close a specific meal with close(manz.monday.breakfast) \n\
 // Set a meal description with manz.tuesday.dinner.mealdesc = 'Italian Braised Beef with Roasted Potatoes'";
 
 module.exports = function(app) {
