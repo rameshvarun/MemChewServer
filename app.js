@@ -8,6 +8,7 @@ var moment = require('moment-timezone'); // Time handling
 var scheduleloader = require('./scheduleloader') // Dining hall schedule
 var uuid = require('node-uuid'); // Generate unique id's
 var bodyParser = require('body-parser'); // Parsing request bodies
+var _ = require("underscore");
 
 // Connect to redis database
 var redis = require("redis").createClient();
@@ -43,10 +44,15 @@ app.get('/halls', function(req, res) {
 			longitude : hall.longitude
 		}
 
-		var todays_schedule = hall.schedule[now.day()];
+		var today = hall[DAY_NAMES[now.day()]];
+	        var todays_schedule = [];
+	        _.each(MEAL_NAMES, function(meal) {
+		    if(meal in today) todays_schedule.push(today[meal]);
+		});
+
 		for(var i = 0; i < todays_schedule.length; ++i) {
 			var meal = todays_schedule[i];
-			if(meal.closed || hall[DAY_NAMES[now.day()]].closed || hall.closed) continue;
+			if(meal.closed || today.closed || hall.closed) continue;
 
 			// Check if we are within the timeframe of this meal
 			var start = moment.tz(day + " " + meal.start, "DD-MM-YYYY h:mma", TIME_ZONE);
