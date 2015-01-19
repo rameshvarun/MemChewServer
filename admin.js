@@ -54,7 +54,7 @@ module.exports = function(app) {
 	});
 
 	app.post('/admin/createoverride', auth, function(req, res) {
-		var filename = req.params('date') + ".js";
+		var filename = req.param('date') + ".js";
 		var filepath = path.join(OVERRIDE_DIR, filename);
 
 		if(!fs.existsSync(filepath)) {
